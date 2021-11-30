@@ -1,0 +1,1 @@
+document.getElementById("cart").onclick = () => window.location.href ="./html/cart.html";
