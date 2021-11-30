@@ -1,0 +1,57 @@
+/* ///////////// NAVIGATION BAR ///////////// */
+nav {
+    margin: auto;
+    padding: 10px 35px;
+    background-color: white;
+    border-bottom: 2px solid lightgrey;
+
+    /* FLEXBOX */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: none;
+    color: green;
+}
+
+nav button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+
+    color: white;
+    font-size: 20px;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+#login {
+    margin-right: 15px;
+}
+
+/* ///// NAV HOVER ///// */
+nav h1:hover{
+    cursor: pointer;
+}
+
+nav button:hover {
+    box-shadow: 0 2px 10px 0 grey;
+    transform: scale(1.005);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* ///// NAV BAR - RESPONSIVE ///// */
+@media only screen and (max-width: 374px) {
+    nav {
+        /* add */
+    }
+}

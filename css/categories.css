@@ -1,0 +1,31 @@
+/* ///////////// ASIDE/CATEGORIES BAR ///////////// */
+aside {
+    background-color: yellow;
+    /* background-color: white; */
+    border-right: 2px solid lightgrey;
+
+    /* FLEXBOX */
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+aside section {
+    height: 40px;
+    width: 100%;
+
+    background-color: lightgray;
+    border: 1px solid black;
+    
+    /* FLEXBOX */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside section:hover {
+    background-color: gray;
+    cursor: pointer;
+}
