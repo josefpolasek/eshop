@@ -12,7 +12,7 @@ aside {
     align-items: center;
 }
 
-aside section {
+aside section, aside div {
     height: 40px;
     width: 100%;
 
@@ -24,6 +24,10 @@ aside section {
     justify-content: center;
     align-items: center;
 }
+
+aside div button {
+    width: 100%;
+}  
 
 aside section:hover {
     background-color: gray;
