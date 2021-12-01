@@ -21,23 +21,25 @@ aside {
     border: 1px solid black;
 
     /* FLEXBOX */
+    /*
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-}
-
-.cudlik {
-
-  width: 100px;
-  height: 40px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-width: 5px;
-  background-color: white;
-
+    justify-content: center;*/
 }
 
 aside .category-option:hover {
     background-color: gray;
     cursor: pointer;
+}
+
+.tlacitko {
+
+  width: 100px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 5px solid red;
+  background-color: red;
+  padding: auto;
+  color: red;
 }
