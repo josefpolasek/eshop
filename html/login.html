@@ -5,6 +5,7 @@
     <title>Login</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="../css/general-styles.css">
     <link rel="stylesheet" href="../css/login.css">
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -20,7 +21,10 @@
   <div class="wrapper">
       <div class="window">
 
-        <div id="window_login">
+        <div class="one_window cover_window" style="position:relative">
+        </div>
+
+        <div class="one_window" id="window_login">
           <div class="header_login">
             Login
           </div>
@@ -42,40 +46,61 @@
           </div>
           <div class="input_box">
           </div>
+          <div class="input_box">
+          </div>
+          
           <div class="login_buttons_box">
             <button type="button" name="button">Log in</button>
-            <button type="button" name="button" id="register_btn">Register</button>
+            <button type="button" name="button" id="login_to_register_btn">Sign up</button>
           </div>
 
         </div>
 
-        <div id="window_signin">
+        <div class="one_window" id="window_signin" style="z-index:2;opacity:0">
           <div class="header_login">
             Register
           </div>
 
           <div class="input_box">
+            <h3>First name:</h3>
+            <div class="around_input">
+              <input type="text" name="" value="" id="signup_input_fname" placeholder="Enter e-mail">
+            </div>
+          </div>
+
+          <div class="input_box">
+            <h3>Last name:</h3>
+            <div class="around_input">
+              <input type="text" name="" value="" id="signup_input_lname" placeholder="Enter e-mail">
+            </div>
+          </div>
+
+          <div class="input_box">
             <h3>E-mail:</h3>
             <div class="around_input">
-              <input type="text" name="" value="" id="login_input_mail" placeholder="Enter e-mail">
+              <input type="text" name="" value="" id="signup_input_mail" placeholder="Enter e-mail">
             </div>
           </div>
           <div class="input_box">
             <h3>Password:</h3>
             <div class="around_input">
-              <input type="text" name="" value="" id="login_input_pass" placeholder="Enter e-mail">
+              <input type="text" name="" value="" id="signup_input_pass" placeholder="Enter e-mail">
+            </div>
+          </div>
+          <div class="input_box">
+            <h3>Confirm password:</h3>
+            <div class="around_input">
+              <input type="text" name="" value="" id="signup_input_confpass" placeholder="Enter e-mail">
             </div>
           </div>
 
-          <div class="input_box">
-          </div>
-          <div class="input_box">
-          </div>
           <div class="login_buttons_box">
-            <button type="button" name="button" >Log in</button>
-            <button type="button" name="button" >Register</button>
+            <button type="button" name="button" >Sign up</button>
+            <button type="button" name="button" id="register_to_login_btn">Login</button>
           </div>
 
+        </div>
+        <div class="one_window cover_window" style="margin-left:66.667%">
         </div>
       </div>
   </div>

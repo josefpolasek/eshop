@@ -16,22 +16,29 @@ body {
 .window {
 
   align-self: center;
-  width: 600px;
-  margin: 100px auto auto auto;
+  width: 100%;
+  margin: 50px auto auto auto;
   background-color: white;
   min-height: 500px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
-.window_login {
+.one_window {
 
-  min-width: 80%;
-  min-height: 80%;
   display: flex;
+  min-height: 600px;
+  width: 33%;
   justify-content: center;
   flex-direction: column;
-
+  position: relative;
 }
+.cover_window {
+  position: absolute;
+  z-index: 4;
+  width: 33.3%;
+  background-color: lightblue;
+}
+
 .header_login {
   text-align: center;
   align-self: center;
@@ -88,11 +95,24 @@ body {
 
   text-align: center;
   align-self: center;
-  height: 40px;
+  height: 50px;
   width: 140px;
   margin: 20px auto 20px auto;
   font-size: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 40px;
-  border: 3px solid red;
+  border: 3px solid lightgrey;
 }
+
+.login_buttons_box  button:after {
+  display: block;
+  position: absolute;
+  margin-left: 0px;
+  width: 120px;
+  content: '';
+  border-bottom: solid 3px #019fb6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.login_buttons_box  button:hover:after { transform: scaleX(1); }
+.login_buttons_box  button:after{  transform-origin:  0% 50%; }
