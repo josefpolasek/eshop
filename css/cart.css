@@ -1,0 +1,79 @@
+.pageLayout {
+
+    max-width: 1000px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+}
+
+.cart_title {
+
+  display: block;
+  width: 100%;
+}
+
+#table-grid {
+
+  width: 90%;
+
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.element {
+
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 80px;
+  width: 100%;
+}
+.btn-trash {
+
+  margin: 15px;
+  width: 50px;
+  height: 50px;
+}
+.thumb {
+
+  margin: 15px;
+  width: 50px;
+  height: 50px;
+}
+.element h4 {
+
+  margin: 30px 0px;
+  width: 300px;
+}
+.set_amount {
+
+  height: 30px;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+}
+.set_amount button{
+
+  height: 30px;
+  width: 30px;
+}
+.set_amount_input {
+
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.price {
+
+  height: 30px;
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+}
