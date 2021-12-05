@@ -1,8 +1,8 @@
 .pageLayout {
 
     max-width: 1000px;
-    height: 500px;
     margin: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: wheat;
@@ -21,7 +21,7 @@
   align-self: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
 }
 
 .element {
@@ -41,9 +41,14 @@
 .thumb {
 
   margin: 15px;
+  margin-left: 0px;
   width: 50px;
   height: 50px;
+
+  background-size: cover;
+  background-position: center center;
 }
+
 .element h4 {
 
   margin: 30px 0px;
@@ -53,6 +58,7 @@
 
   height: 30px;
   margin: 25px;
+  margin-right: 0px;
   display: flex;
   flex-direction: row;
 }
@@ -74,6 +80,49 @@
 
   height: 30px;
   margin: 25px;
+  margin-left: 0px;
   display: flex;
+  align-self: center;
+
+}
+.price svg {
+
+  display: flex;
+  align-self: center;
+}
+
+.bottom_area {
+
+  height: 50px;
+  width: 90%;
+  display: flex;
+  align-self: center;
+  margin-top: 30px;
   flex-direction: row;
 }
+
+.bottom_area  button{
+
+  text-align: center;
+  align-self: center;
+  height: 50px;
+  width: 280px;
+  margin: 5px auto 5px auto;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 40px;
+  border: 3px solid lightgrey;
+}
+
+.bottom_area  button:after {
+  display: block;
+  position: absolute;
+  margin-left: 8px;
+  width: 255px;
+  content: '';
+  border-bottom: solid 3px #019fb6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.bottom_area  button:hover:after { transform: scaleX(1); }
+.bottom_area  button:after{  transform-origin:  0% 50%; }
