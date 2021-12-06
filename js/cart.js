@@ -5,21 +5,21 @@ var items = [
     itemId: 1234,
     name: "Developer",
     picture: "../klaus.jpg",
-    amount: 1,
+    amount: 2,
     price: 12
   },
   {
     itemId: 2345,
     name: "Developer",
     picture: "../klaus.jpg",
-    amount: 1,
-    price: 3
+    amount: 3,
+    price: 3.5
   },
   {
     itemId: 3456,
-    name: "Developer",
+    name: "Covid je levicový.",
     picture: "../klaus.jpg",
-    amount: 1,
+    amount: 5,
     price: 2
   }
 ];
