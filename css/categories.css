@@ -12,7 +12,7 @@ aside {
     align-items: center;
 }
 
-aside section, aside div {
+aside div {
     height: 50px;
     width: 100%;
 
@@ -33,22 +33,34 @@ aside div button {
     margin: 0px;
     font-size: 1.4em;
     padding: 0px;
-
 }
-aside div button:after {
-  display: block;
-  position: absolute;
-  margin-left: 8px;
-  width: 180px;
-  content: '';
-  border-bottom: solid 3px #019fb6;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-}
-aside div:hover button:after { transform: scaleX(1); }
-aside div button:after{  transform-origin:  0% 50%; }
 
-aside section:hover {
-    background-color: gray;
+aside button:hover {
     cursor: pointer;
+    background-color: lightgray;
+} 
+
+/* TEMPORARILY COMENTED */
+/* aside div button:after {
+    display: block;
+    position: absolute;
+    margin-left: 8px;
+    width: 180px;
+    content: '';
+    border-bottom: solid 3px #019fb6;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
 }
+
+aside div:hover button:after {
+    transform: scaleX(1);
+}
+
+aside div:focus button:after {
+    transform: scaleX(1);
+}
+
+aside div button:after {
+    transform-origin: 0% 50%;
+}
+*/

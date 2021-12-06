@@ -12,8 +12,12 @@
     <link rel="stylesheet" href="./css/product-board.css">
 
     <!-- JavaScript and JQuery links-->
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="./js/load-sql.js" async></script>
     <script type="text/javascript" src="./js/main-page.js" async></script>
+
+    <!-- JQuery and Ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <!-- Viewport -->
     <meta charset="UTF-8">
@@ -37,8 +41,9 @@
 
     <div class="pageLayout">
         <aside>
-            <div><button>1</button></div>
-            <div><button>2</button></div>
+            <h3>Choose a category</h3>
+            <div><button id="b1">1</button></div>
+            <div><button id="b2">2</button></div>
             <div><button>3</button></div>
             <div><button>4</button></div>
             <div><button>5</button></div>
@@ -47,46 +52,26 @@
 
         <main>
             <div class="header">
-                <section>1</section>
-                <section>2</section>
-                <section>3</section>
+                <button>Price Low to High</button>
+                <button>Price High to Low</button>
+                <button>Custom Range</button>
             </div>
 
-            <div class="productBoard">
-                <div class="card" id="card1">
-                    <img src="https://media.istockphoto.com/photos/indian-engineer-confidence-construction-site-picture-id186621910"
-                        alt="Engineer">
-                    <h2>Product name</h2>
-                    <h3>price</h3>
+            <div class="productBoard" id="productBoard">
+                <!-- <div class="card" id="card1">
+                    <img src="https://cdn.alza.cz/ImgW.ashx?fd=f4&cd=FKP0279781&i=1.jpg"
+                        alt="product photo">
+                    <h2>Harry potter</h2>
+                    <h3>10$</h3>
                 </div>
 
                 <div class="card" id="card1">
-                    <img src="https://media.istockphoto.com/photos/indian-engineer-confidence-construction-site-picture-id186621910"
+                    <img src="https://cdn.alza.cz/ImgW.ashx?fd=FotoAddOrig&cd=CAMT001-02&i=1.jpg"
                         alt="Engineer">
-                    <h2>Product name</h2>
-                    <h3>price</h3>
-                </div>
+                    <h2>Microwave</h2>
+                    <h3>89.99$</h3>
+                </div> -->
 
-                <div class="card" id="card1">
-                    <img src="https://media.istockphoto.com/photos/indian-engineer-confidence-construction-site-picture-id186621910"
-                        alt="Engineer">
-                    <h2>Product name</h2>
-                    <h3>price</h3>
-                </div>
-
-                <div class="card" id="card1">
-                    <img src="https://media.istockphoto.com/photos/indian-engineer-confidence-construction-site-picture-id186621910"
-                        alt="Engineer">
-                    <h2>Product name</h2>
-                    <h3>price</h3>
-                </div>
-
-                <div class="card" id="card1">
-                    <img src="https://media.istockphoto.com/photos/indian-engineer-confidence-construction-site-picture-id186621910"
-                        alt="Engineer">
-                    <h2>Product name</h2>
-                    <h3>price</h3>
-                </div>
             </div>
         </main>
 
