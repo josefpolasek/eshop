@@ -85,6 +85,16 @@
   align-self: center;
 
 }
+.unit_price {
+
+  width: 2em;
+  text-align: right;
+}
+.final_price {
+
+  width: 2em;
+  text-align: right;
+}
 .price svg {
 
   display: flex;
