@@ -66,11 +66,12 @@ function showItems(items) {
   oneBtnMinus.setAttribute('type', 'button');
   oneBtnMinus.setAttribute('name', 'button');
   oneBtnMinus.setAttribute('class', 'btn-minus');
-  oneBtnMinus.innerHTML = `
+  oneBtnMinus.innerText = '-';
+  /*oneBtnMinus.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-minus" viewBox="0 0 16 16">
         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
     </svg>
-  `;
+  `;*/
   const inputAmount = document.createElement("input");
   inputAmount.setAttribute('type', 'text');
   inputAmount.setAttribute('class','set_amount_input');
@@ -79,11 +80,12 @@ function showItems(items) {
   oneBtnPlus.setAttribute('type', 'button');
   oneBtnPlus.setAttribute('name', 'button');
   oneBtnPlus.setAttribute('class', 'btn-plus');
-  oneBtnPlus.innerHTML = `
+  oneBtnPlus.innerText = '+';
+  /*oneBtnPlus.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
     </svg>
-  `;
+  `;*/
   oneSetAmount.appendChild(oneBtnMinus);
   oneSetAmount.appendChild(inputAmount);
   oneSetAmount.appendChild(oneBtnPlus);
@@ -148,6 +150,39 @@ $("#table-grid").click(item => {
             const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
             deleteItem(idShort);
         };
+});
+
+//add one event listener to the whole grid
+$("#table-grid").click(item => {
+    console.log("Grid clicked!");
+    if (item.target.classList.contains("btn-plus")) {
+
+      const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
+      items.forEach(function(oneItem) {
+
+        if (oneItem.itemId == idShort) {
+          oneItem.amount = oneItem.amount+1;
+        }
+      });
+    } else if (item.target.classList.contains("btn-minus")) {
+
+      const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
+      items.forEach(function(oneItem) {
+
+        if (oneItem.itemId == idShort) {
+
+          if (oneItem.amount == 1) {
+
+            deleteItem(idShort);
+
+          } else {
+
+            oneItem.amount = oneItem.amount-1;
+          }
+        }
+      });
+    }
+    showItems(items);
 });
 
 
