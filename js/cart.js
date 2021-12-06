@@ -24,14 +24,14 @@ items = [
   }
 ];
 
-
+const tableGrid = document.getElementById("table-grid");
 
 showItems(items);
 
 //render the actual content
 function showItems(items) {
 
-  $("#table-grid").innerHTML = '';
+  tableGrid.innerHTML = '';
 
   //for each element
   items.forEach(function(oneItem) {
@@ -127,7 +127,7 @@ function showItems(items) {
 
 
 function deleteItem(id) {
-  console.log(id);
+  console.log(items);
   // filters out the elements based on deleted elements id's
   items = items.filter(function(item) {
 
@@ -136,11 +136,12 @@ function deleteItem(id) {
 
   //show the updated content
   //saveToStorage(items);
+  console.log(items);
   showItems(items);
 }
 
 //add one event listener to the whole grid
-$('#table-grid').click(item => {
+tableGrid.click(item => {
         if (item.target.classList.contains("btn-trash")) {
             const idShort = item.target.parentElement.getAttribute("data-key");
             deleteItem(idShort);
