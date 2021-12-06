@@ -24,7 +24,7 @@ items = [
   }
 ];
 
-document.getElementById("logo").onclick = () => window.location.href ="login.html";
+
 
 showItems(items);
 
@@ -140,14 +140,11 @@ function deleteItem(id) {
 }
 
 //add one event listener to the whole grid
-$('#table-grid').click(function(event) {
-  //check if click was on the "remove button"
-
-  if (event.target.classList.contains('btn-trash')) {
-    console.log('click!');
-    //get ID of the parent-parent element corresponding to the clicked "remove button"
-    deleteItem(event.target.parentElement.getAttribute('data-key'));
-  }
+$('#table-grid').click(item => {
+        if (item.target.classList.contains("btn-trash")) {
+            const idShort = item.target.parentElement.getAttribute("data-key");
+            deleteItem(idShort);
+        };
 });
 
 
