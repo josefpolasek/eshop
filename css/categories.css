@@ -28,7 +28,7 @@ aside div {
 aside div button {
     width: 200px;
     height: 30px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
     border: 0px;
     margin: 0px;
     font-size: 1.4em;
@@ -37,11 +37,10 @@ aside div button {
 
 aside button:hover {
     cursor: pointer;
-    background-color: lightgray;
-} 
+}
 
 /* TEMPORARILY COMENTED */
-/* aside div button:after {
+aside div button:after {
     display: block;
     position: absolute;
     margin-left: 8px;
@@ -56,11 +55,21 @@ aside div:hover button:after {
     transform: scaleX(1);
 }
 
-aside div:focus button:after {
-    transform: scaleX(1);
-}
-
 aside div button:after {
     transform-origin: 0% 50%;
 }
-*/
+.space {
+  display: block;
+  position: absolute;
+  margin-left: 0px;
+  height: 32px;
+  width: 180px;
+  content: '';
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: solid 3px #019fb6;
+  transition: transform 250ms ease-in-out;
+  transform-origin: 0% 50%;
+  background-color:rgba(0, 0, 0, 0);
+}
