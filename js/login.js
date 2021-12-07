@@ -213,7 +213,7 @@ function PasswordCheck() {
     error_password = true;
   } else if (!pattern.test(password)) {
 
-    $("#error_message_pass").html("Requirement: at least 6 characters, one capital letter,<br> one lowercase letter, at least one digit and one special<br> chararcter!");
+    $("#error_message_pass").html("Requirement: at least 6 characters, one capital letter, one lowercase letter, at least one digit and one special chararcter!");
     $("#error_message_pass").show();
 
     $("#signup_input_pass").css("border-color","red");
