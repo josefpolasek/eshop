@@ -84,6 +84,11 @@
 
   height: 30px;
   width: 30px;
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .set_amount_input {
 
@@ -154,3 +159,9 @@
 }
 .bottom_area  button:hover:after { transform: scaleX(1); }
 .bottom_area  button:after{  transform-origin:  0% 50%; }
+
+
+.btn-minus, .btn-plus {
+
+  text-align: center;
+}
