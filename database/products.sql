@@ -1,10 +1,10 @@
 /* CREATE TABLE */
 CREATE TABLE table_name(
-product_name VARCHAR(100),
-category VARCHAR(100),
-amount_of_products DOUBLE,
-price_for_one DOUBLE,
-photo_source VARCHAR(100)
+	product_name VARCHAR(100),
+	category VARCHAR(100),
+	amount_of_products DOUBLEttryg,
+	price_for_one DOUBLE,
+	photo_source VARCHAR(100)
 );
 
 /* INSERT QUERY NO: 1 */

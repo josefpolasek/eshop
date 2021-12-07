@@ -1,26 +1,31 @@
 // data structures
 const categories = {
   books: [],
+  clothes: [],
+  smartphones: [],
 }
 
 // temporary solution
 $(document).ready(function () {
+  /* //////////// CHANGE TO MYSQL ////////////  */
   $.ajax({
     url: "./database/sheet.csv",
     dataType: "text",
     success: function (data) {
       const products_raw = data.split(/\r?\n|\r/);
-      // console.log(products_raw[1]);
-      const products = [];
       for (let i = 0; i < products_raw.length; i++) {
         let cell_data = products_raw[i].split(",", 5);
-        categories.books.push(cell_data);
-        // products.push(/* Date.now(), */ cell_data);
+        
+        // push by types 
+        if (cell_data[1] === "book") categories.books.push(cell_data);
+        else if (cell_data[1] === "clothes") categories.books.push(cell_data);
+        else if (cell_data[1] === "smartphones") categories.books.push(cell_data);
       }
-      console.log(categories.books);
+      console.log(categories);
       display(categories.books);
     }
   });
+  /* //////////// END OF 'CHANGE TO MYSQL' ////////////  */
 
   function display(products) {
     $("#productBoard").html("");

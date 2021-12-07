@@ -4,20 +4,25 @@ main {
 
 /* ///////////// MAIN - HEADER ///////////// */
 main .header {
-    background-color: wheat;
+    background-color: orange;
     height: 30px;
-    border-bottom: 4px solid black;
+    width: 100%;
+    /* border-bottom: 3px solid black; */
 
     /* FLEXBOX */
     display: flex;
     justify-content: center;
 }
 
+main {
+    /* height: 100vh; */
+}
+
 main .header button {
-    background-color: lightgray;
-    width: 200px;
+    background-color: gray;
+    width: 100%;
     border: 1px solid black;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid black;
 
     /* FLEXBOX */
     display: flex;
@@ -28,11 +33,17 @@ main .header button {
 
 main .header button:hover {
     cursor: pointer;
-    background-color: gray;
+    background-color: white;
+    border-bottom: 1px solid transparent;
 }
 
 /* ///////////// MAIN - BOARD ///////////// */
 main .productBoard {
+    /* background-color: green; */
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+
     margin-top: 0px;
     padding-top: 10px;
 

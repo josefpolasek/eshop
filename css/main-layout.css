@@ -4,15 +4,10 @@
     display: grid;
     grid-template-columns: 200px 1fr;
 
-    background-color: wheat;
+    /* background-color: wheat; */
 }
 
 aside {
     margin: 0;
     margin-bottom: 20px;
-}
-
-main {
-    background-color: green;
-    /* height: 100vh; */
 }
