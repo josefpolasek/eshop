@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-  const data = JSON.parse(localStorage.getItem("arrayTMP"));
-  console.log(data);
+  const cartContent = JSON.parse(localStorage.getItem("cartContent"));
+  console.log(cartContent);
 
-  var items = [
+  /* var items = [
     {
       itemId: 1234,
       name: "Developer",
@@ -25,41 +25,45 @@ $(document).ready(function () {
       amount: 5,
       price: 2
     }
-  ];
+  ]; */
 
-
-
-  showItems(items)
+  showItems(cartContent);
 
   //render the actual content
   function showItems(items) {
-
-    //$("#table-grid").innerHTML = '';
-
     $("#table-grid").html('');
-    console.log(items);
+
     //for each element
     items.forEach(function (oneItem) {
+      // console.log(oneItem);
+      // return;
+
       //create an object
       const oneElement = document.createElement('div');
 
       oneElement.setAttribute('class', 'element');
-      oneElement.setAttribute('data-key', oneItem.itemId);
+      oneElement.setAttribute('data-key', oneItem[0]);
       oneElement.innerHTML = `
-    <button type="button" class="btn btn-trash">
-        <div class="trash-container">
+        <button type="button" class="btn btn-trash">
+          <div class="trash-container">
+          <div>
+        </button>
+      `;
 
-        <div>
-    </button>
-  `;
       //add the coresponding image
       const oneImage = document.createElement('div');
       oneImage.setAttribute('class', 'thumb');
-      oneImage.setAttribute('style', "background-image: url(" + oneItem.picture + ")");
+
+      /* //////////////// CHANGE TOMAS PYCHA //////////////// */
+      oneImage.setAttribute('style', "background-image: url(https://m.media-amazon.com/images/I/71LcfR3uuDS._AC_UL640_FMwebp_QL65_.jpg)");
+      // `${oneItem[5]}`
+      // console.log(`${oneItem[5]}`);
+      /* //////////////// CHANGE TOMAS PYCHA //////////////// */
+
 
       //add the coresponding title
       const oneName = document.createElement("h4");
-      oneName.innerText = oneItem.name;
+      oneName.innerText = oneItem[1];
 
       //add the amount setter
       const oneSetAmount = document.createElement("div");
@@ -75,10 +79,11 @@ $(document).ready(function () {
             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
         </svg>
       `;*/
+
       const inputAmount = document.createElement("input");
       inputAmount.setAttribute('type', 'text');
       inputAmount.setAttribute('class', 'set_amount_input');
-      inputAmount.setAttribute('value', oneItem.amount);
+      inputAmount.setAttribute('value', oneItem[3]);
       const oneBtnPlus = document.createElement("button");
       oneBtnPlus.setAttribute('type', 'button');
       oneBtnPlus.setAttribute('name', 'button');
@@ -103,20 +108,20 @@ $(document).ready(function () {
   `;
       const oneUnitPrice = document.createElement('h2');
       oneUnitPrice.setAttribute('class', 'unit_price');
-      oneUnitPrice.innerText = oneItem.price;
+      oneUnitPrice.innerText = oneItem[4];
       onePrice.appendChild(oneUnitPrice);
 
       const symbols = document.createElement('h2');
-      symbols.innerText = '\u00a0CZK =\u00a0';
+      symbols.innerText = '\u00a0 $ =\u00a0';
       onePrice.appendChild(symbols);
 
       const finalPrice = document.createElement('h2');
       finalPrice.setAttribute('class', 'final_price');
-      finalPrice.innerText = oneItem.price * oneItem.amount;
+      finalPrice.innerText = oneItem[4] * oneItem[3];
       onePrice.appendChild(finalPrice);
 
       const symbolsTwo = document.createElement('h2');
-      symbolsTwo.innerText = '\u00a0CZK';
+      symbolsTwo.innerText = '\u00a0 $';
       onePrice.appendChild(symbolsTwo);
 
 
@@ -133,17 +138,19 @@ $(document).ready(function () {
 
 
   function deleteItem(id) {
-    console.log(items);
+    console.log(id);
+    // console.log(cartContent);
     // filters out the elements based on deleted elements id's
-    items = items.filter(function (item) {
 
-      return item.itemId != id;
-    });
+    /* for (let i = 0; i < cartContent.length; i++) {
+      
+    } */
+    cartContent = cartContent.filter( /* item => item[0] != id */ item => console.log(item) );
 
     //show the updated content
-    //saveToStorage(items);
+    //saveToStorage(cartContent);
     console.log(items);
-    showItems(items);
+    showItems(cartContent);
   }
 
   //add one event listener to the whole grid
@@ -161,31 +168,31 @@ $(document).ready(function () {
     if (item.target.classList.contains("btn-plus")) {
 
       const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
-      items.forEach(function (oneItem) {
+      cartContent.forEach(function (oneItem) {
 
-        if (oneItem.itemId == idShort) {
-          oneItem.amount = oneItem.amount + 1;
+        if (oneItem[0] == idShort) {
+          oneItem[3] = oneItem[3] + 1;
         }
       });
     } else if (item.target.classList.contains("btn-minus")) {
 
       const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
-      items.forEach(function (oneItem) {
+      cartContent.forEach(function (oneItem) {
 
-        if (oneItem.itemId == idShort) {
+        if (oneItem[0] == idShort) {
 
-          if (oneItem.amount == 1) {
+          if (oneItem[3] == 1) {
 
             deleteItem(idShort);
 
           } else {
 
-            oneItem.amount = oneItem.amount - 1;
+            oneItem[3] = oneItem[3] - 1;
           }
         }
       });
     }
-    showItems(items);
+    showItems(cartContent);
   });
 
 
