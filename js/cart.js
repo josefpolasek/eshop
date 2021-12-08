@@ -189,19 +189,4 @@ $(document).ready(function () {
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
