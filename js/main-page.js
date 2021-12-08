@@ -4,6 +4,9 @@ const categories = {
     clothes: [],
     computer: [],
     furniture: [],
+    movies: [],
+    smartphones: [],
+    sport: [],
 }
 
 let categoriesArray = [];
@@ -28,6 +31,9 @@ $(document).ready(function () {
                 else if (cell_data[2] === "clothes") categories.clothes.push(cell_data);
                 else if (cell_data[2] === "computer") categories.computer.push(cell_data);
                 else if (cell_data[2] === "furniture") categories.furniture.push(cell_data);
+                else if (cell_data[2] === "movies") categories.movies.push(cell_data);
+                else if (cell_data[2] === "smartphones") categories.smartphones.push(cell_data);
+                else if (cell_data[2] === "sport") categories.sport.push(cell_data);
                 
                 categoriesArray.push(cell_data);
             }
@@ -62,7 +68,6 @@ $(document).ready(function () {
     });
 
     /* //////// SELECT A  CATEGORY //////// */
-
     $("#everything").click(function () {
         $("aside div").css("background-color", "white");
         $("#everything").css("background-color", "lightgrey");
@@ -70,34 +75,6 @@ $(document).ready(function () {
         displayedProducts = categoriesArray;
         display(displayedProducts);
     });
-
-    /* 
-    function showEverything() {
-      $("#productBoard").html("");
-  
-      $("aside div").css("background-color", "white");
-      $("#everything").css("background-color", "lightgrey");
-  
-      Object.values(categories).forEach(val => {
-        val.forEach(item => {
-        let c = document.createElement("div");
-        c.setAttribute("class", "card");
-        c.setAttribute("data-key", item[0]);
-        c.innerHTML = `
-          <img src="${item[5]}" alt="product photo">
-          <h2>${item[1]}</h2>
-          <h3>${item[4]}</h3>
-            `;
-  
-        $("#productBoard").append(c);
-        });
-  
-        });
-    };
-   */
-    //   $("#categories").click(function () {
-    //     console.log("hi");
-    //   });
 
     $("#books").click(function () {
         $("aside div").css("background-color", "white");
@@ -130,6 +107,30 @@ $(document).ready(function () {
         // console.log(categories.computer);
 
         displayedProducts = categories.computer;
+        display(displayedProducts);
+    });
+
+    $("#movies").click(function () {
+        $("aside div").css("background-color", "white");
+        $("#movies").css("background-color", "lightgrey");
+
+        displayedProducts = categories.movies;
+        display(displayedProducts);
+    });
+
+    $("#smartphones").click(function () {
+        $("aside div").css("background-color", "white");
+        $("#smartphones").css("background-color", "lightgrey");
+
+        displayedProducts = categories.smartphones;
+        display(displayedProducts);
+    });
+
+    $("#sport").click(function () {
+        $("aside div").css("background-color", "white");
+        $("#sport").css("background-color", "lightgrey");
+
+        displayedProducts = categories.sport;
         display(displayedProducts);
     });
 
@@ -195,14 +196,14 @@ $(document).ready(function () {
         $("#productBoard").html("");
         
         if (sortBy === 0 || sortBy === 2) {
-            for (let i = 0; i < products.length; i++) {    
+            for (let i = 0; i < products.length; i++) {
                 let c = document.createElement("div");
                 c.setAttribute("class", "card");
                 c.setAttribute("data-key", products[i][0]);
                 c.innerHTML = `
                 <img src="${products[i][5]}" alt="product photo">
                 <h2>${products[i][1]}</h2>
-                <h3>${products[i][4]}</h3>
+                <h3>$${products[i][4]}</h3>
                 <button>Buy item</button>
               `;
     
@@ -210,7 +211,7 @@ $(document).ready(function () {
                 // end
             };
         } else if (sortBy === 1) {
-            for (let i = products.length-1; i >= 0; i--) {    
+            for (let i = products.length-1; i >= 0; i--) {                  
                 let c = document.createElement("div");
                 c.setAttribute("class", "card");
                 c.setAttribute("data-key", products[i][0]);
@@ -253,6 +254,12 @@ $(document).ready(function () {
 
         if (item.target.nodeName === "BUTTON") {
             const idNum = item.target.parentElement.getAttribute("data-key");
+
+            // console.log(categoriesArray);
+            
+            // console.log(item.target.parentElement);
+            item.target.parentElement.style.pointerEvents = 'none';
+            // idNum.prop("disabled", true);
             
             // console.log(idNum);
             // console.log(categoriesArray[idNum]);
