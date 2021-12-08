@@ -71,6 +71,10 @@ main .header button:hover {
     /* border-bottom: 1px solid transparent; */
 }
 
+.clicked {
+    user-select: none;
+}
+
 /* ///////////// MAIN - BOARD ///////////// */
 main .productBoard {
     /* background-color: green; */

@@ -27,6 +27,8 @@ $(document).ready(function () {
       // initial
       showEverything();
       $("#low").css("background-color", "lightgrey");
+      $("#low").prop("disabled", true);
+      $("#price_range").css("visibility","hidden");
     }
   });
 
@@ -112,10 +114,16 @@ $(document).ready(function () {
   $("#low").click(function () {
     $(".header button").css("background-color", "white");
     $("#low").css("background-color", "lightgrey");
+    $("#high").prop("disabled", false);
+    $("#custom").prop("disabled", false);
+    $("#price_range").css("visibility","hidden");
     
     $("#high").removeClass("clicked");
     $("#custom").removeClass("clicked");
+
     $("#low").addClass("clicked");
+    $("#low").prop("disabled", true);
+
 
     display(null, true);
   });
@@ -123,10 +131,15 @@ $(document).ready(function () {
   $("#high").click(function () {
     $(".header button").css("background-color", "white");
     $("#high").css("background-color", "lightgrey");
+    $("#custom").prop("disabled", false);
+    $("#low").prop("disabled", false);
+    $("#price_range").css("visibility","hidden");
 
     $("#low").removeClass("clicked");
     $("#custom").removeClass("clicked");
+
     $("#high").addClass("clicked");
+    $("#high").prop("disabled", true);
 
     display(null, true);
   });
@@ -134,23 +147,33 @@ $(document).ready(function () {
   $("#custom").click(function () {
     $(".header button").css("background-color", "white");
     $("#custom").css("background-color", "lightgrey");
+    $("#high").prop("disabled", false);
+    $("#low").prop("disabled", false);
+
+    $("#price_range").css("visibility","visible");
+    $("#custom").addClass("clicked");
+    $("#custom").prop("disabled", true);
     
-    display(null, true);
+    // display(null, true);
   });
 
 
   /* //////// _ _ _ //////// */
   function display(products, sort) {
     $("#productBoard").html("");
-
+    
     if (sort) { 
-      products = JSON.parse(localStorage.getItem("products"));
-      // console.log(products);
-    }
+      products = JSON.parse(localStorage.getItem("products"));;
+    }    
+
+    if($("#low").hasClass("clicked")/*  && (products[0][3] > products[1][3]) */) 
+      products = products.slice().reverse();
+
+    if ($("#high").hasClass("clicked")/*  && (products[0][3] < products[1][3]) */)
+      products = products.slice().reverse();
     
-    if($("#low").hasClass("clicked")) products = products.slice().reverse();
-    else if ($("#high").hasClass("clicked")) products = products.slice().reverse();
-    
+    console.log(products);
+
     products.forEach(item => {
       // console.log(item);
       // console.log(item[3]);
