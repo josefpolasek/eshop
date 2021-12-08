@@ -1,6 +1,6 @@
 /* ///////////// ASIDE/CATEGORIES BAR ///////////// */
 aside {
-    background-color: yellow;
+    /* background-color: yellow; */
     /* background-color: white; */
     border-right: 2px solid lightgrey;
 
@@ -10,6 +10,10 @@ aside {
     /* flex-wrap: wrap; */
     justify-content: flex-start;
     align-items: center;
+}
+
+aside h3 {
+    line-height: 40px;
 }
 
 aside div {

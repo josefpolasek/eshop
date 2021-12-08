@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <!-- JavaScript and JQuery links-->
-    <!--<script type="text/javascript" src="./js/load-sql.js" async></script>-->
+    <script type="text/javascript" src="./js/load-sql.js" async></script>
     <script type="text/javascript" src="./js/main-page.js" async></script>
 
 
@@ -42,21 +42,20 @@
 
 
     <div class="pageLayout">
-        <aside>
+        <aside id="categories">
             <h3>Choose a category</h3>
-            <div id="cat1"><button>1</button></div>
-            <div id="cat2"><button>2</button></div>
-            <div id="cat3"><button>3</button></div>
-            <div id="cat4"><button>4</button></div>
-            <div id="cat5"><button>5</button></div>
-            <div id="cat6"><button>6</button></div>
+            <div id="everything"><button>Everything</button></div>
+            <div id="books"><button>Books</button></div>
+            <div id="clothes"><button>Clothes</button></div>
+            <div id="computer"><button>Computer</button></div>
+            <div id="furniture"><button>Furniture</button></div>
         </aside>
 
         <main>
             <div class="header">
-                <button>Price Low to High</button>
-                <button>Price High to Low</button>
-                <button>Custom Range</button>
+                <button id="low">Price Low to High</button>
+                <button id="high">Price High to Low</button>
+                <button id="custom">Custom Range</button>
             </div>
 
             <div class="productBoard" id="productBoard">
