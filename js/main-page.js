@@ -15,13 +15,13 @@ $(document).ready(function () {
     success: function (data) {
       const products_raw = data.split(/\r?\n|\r/);
       for (let i = 0; i < products_raw.length; i++) {
-        let cell_data = products_raw[i].split(",", 5);
+        let cell_data = products_raw[i].split(",", 7);
 
         // push by types 
-        if (cell_data[1] === "book") categories.books.push(cell_data);
-        else if (cell_data[1] === "clothes") categories.clothes.push(cell_data);
-        else if (cell_data[1] === "computer") categories.computer.push(cell_data);
-        else if (cell_data[1] === "furniture") categories.furniture.push(cell_data);
+        if (cell_data[2] === "book") categories.books.push(cell_data);
+        else if (cell_data[2] === "clothes") categories.clothes.push(cell_data);
+        else if (cell_data[2] === "computer") categories.computer.push(cell_data);
+        else if (cell_data[2] === "furniture") categories.furniture.push(cell_data);
       }
 
       // initial
@@ -31,11 +31,7 @@ $(document).ready(function () {
       $("#price_range").css("visibility","hidden");
     }
   });
-
-
   /* //////////// END OF 'CHANGE TO MYSQL' ////////////  */
-
-  // initial
 
   /* ////// REDIRECTING TO ANOTHER PAGES ////// */
   $("#login").click(function () {
@@ -45,12 +41,12 @@ $(document).ready(function () {
   $("#cart").click(function () {
 
     // export the array
-    const arrayTMP = [];
-    arrayTMP.push(categories.books);
+    const productsCart = []; // add to buy
+    productsCart.push(categories.books);
     console.log(arrayTMP);
     // localStorage.setItem("array", arrayTMP);
 
-    localStorage.setItem("arrayTMP", JSON.stringify(arrayTMP));
+    localStorage.setItem("productsCart", JSON.stringify(arrayTMP));
 
     window.location.assign("./html/cart.html");
   });
@@ -72,12 +68,12 @@ $(document).ready(function () {
 
     Object.values(categories).forEach(val => {
       val.forEach(item => {
-        let c = document.createElement("div");
+      let c = document.createElement("div");
       c.setAttribute("class", "card");
       c.innerHTML = `
-        <img src="${item[4]}" alt="product photo">
-        <h2>${item[0]}</h2>
-        <h3>${item[3]}</h3>
+        <img src="${item[5]}" alt="product photo">
+        <h2>${item[1]}</h2>
+        <h3>${item[4]}</h3>
           `;
 
       $("#productBoard").append(c);
@@ -161,30 +157,28 @@ $(document).ready(function () {
   /* //////// _ _ _ //////// */
   function display(products, sort) {
     $("#productBoard").html("");
+    console.log(products);
     
     if (sort) { 
       products = JSON.parse(localStorage.getItem("products"));;
     }    
 
-    if($("#low").hasClass("clicked")/*  && (products[0][3] > products[1][3]) */) 
+    if($("#low").hasClass("clicked")) 
       products = products.slice().reverse();
 
-    if ($("#high").hasClass("clicked")/*  && (products[0][3] < products[1][3]) */)
+    if ($("#high").hasClass("clicked"))
       products = products.slice().reverse();
     
     console.log(products);
 
     products.forEach(item => {
-      // console.log(item);
-      // console.log(item[3]);
-      // console.log(item[0]);
 
       let c = document.createElement("div");
       c.setAttribute("class", "card");
       c.innerHTML = `
-        <img src="${item[4]}" alt="product photo">
-        <h2>${item[0]}</h2>
-        <h3>${item[3]}</h3>
+        <img src="${item[5]}" alt="product photo">
+        <h2>${item[1]}</h2>
+        <h3>${item[4]}</h3>
           `;
 
       $("#productBoard").append(c);
