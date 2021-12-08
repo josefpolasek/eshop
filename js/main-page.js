@@ -3,9 +3,12 @@ const categories = {
   books: [],
   clothes: [],
   computer: [],
-  furniture: [], 
+  furniture: [],
 }
 
+const cartContent = {
+
+}
 // temporary solution
 $(document).ready(function () {
   /* //////////// CHANGE TO MYSQL ////////////  */
@@ -17,7 +20,7 @@ $(document).ready(function () {
       for (let i = 0; i < products_raw.length; i++) {
         let cell_data = products_raw[i].split(",", 7);
 
-        // push by types 
+        // push by types
         if (cell_data[2] === "book") categories.books.push(cell_data);
         else if (cell_data[2] === "clothes") categories.clothes.push(cell_data);
         else if (cell_data[2] === "computer") categories.computer.push(cell_data);
@@ -52,7 +55,7 @@ $(document).ready(function () {
   });
 
   /* //////// SELECT A  CATEGORY //////// */
-  
+
   $("#everything").click(function () {
     showEverything();
       // console.log(val);/
@@ -70,6 +73,7 @@ $(document).ready(function () {
       val.forEach(item => {
       let c = document.createElement("div");
       c.setAttribute("class", "card");
+      c.setAttribute("data-key", ${item[0]});
       c.innerHTML = `
         <img src="${item[5]}" alt="product photo">
         <h2>${item[1]}</h2>
@@ -81,7 +85,7 @@ $(document).ready(function () {
 
       });
   };
-  
+
   $("#books").click(function () {
     $("aside div").css("background-color", "white");
     $("#books").css("background-color", "lightgrey");
@@ -113,7 +117,7 @@ $(document).ready(function () {
     $("#high").prop("disabled", false);
     $("#custom").prop("disabled", false);
     $("#price_range").css("visibility","hidden");
-    
+
     $("#high").removeClass("clicked");
     $("#custom").removeClass("clicked");
 
@@ -149,7 +153,7 @@ $(document).ready(function () {
     $("#price_range").css("visibility","visible");
     $("#custom").addClass("clicked");
     $("#custom").prop("disabled", true);
-    
+
     // display(null, true);
   });
 
@@ -158,17 +162,17 @@ $(document).ready(function () {
   function display(products, sort) {
     $("#productBoard").html("");
     console.log(products);
-    
-    if (sort) { 
-      products = JSON.parse(localStorage.getItem("products"));;
-    }    
 
-    if($("#low").hasClass("clicked")) 
+    if (sort) {
+      products = JSON.parse(localStorage.getItem("products"));;
+    }
+
+    if($("#low").hasClass("clicked"))
       products = products.slice().reverse();
 
     if ($("#high").hasClass("clicked"))
       products = products.slice().reverse();
-    
+
     console.log(products);
 
     products.forEach(item => {
@@ -182,11 +186,31 @@ $(document).ready(function () {
           `;
 
       $("#productBoard").append(c);
-      // end 
+      // end
 
       window.localStorage.removeItem("products");
       localStorage.setItem("products", JSON.stringify(products));
     });
   };
+
+  //add one event listener to the whole grid
+  $("#productBoard").click(item => {
+    console.log("Product board clicked!");
+    if (item.target.classList.contains("card")) {
+      console.log("Card clicked");
+      const idShort = item.target.getAttribute("data-key");
+      addToCart(idShort);
+    };
+  });
+
+  function addToCart (id) {
+
+
+
+
+  }
+
+
+
 
 });
