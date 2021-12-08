@@ -41,12 +41,10 @@ $(document).ready(function () {
   $("#cart").click(function () {
 
     // export the array
-    const productsCart = []; // add to buy
-    productsCart.push(categories.books);
-    console.log(arrayTMP);
+    console.log(productsCart);
     // localStorage.setItem("array", arrayTMP);
 
-    localStorage.setItem("productsCart", JSON.stringify(arrayTMP));
+    localStorage.setItem("productsCart", JSON.stringify(productsCart));
 
     window.location.assign("./html/cart.html");
   });
@@ -81,7 +79,11 @@ $(document).ready(function () {
 
       });
   };
-  
+
+//   $("#categories").click(function () {
+//     console.log("hi");
+//   });
+
   $("#books").click(function () {
     $("aside div").css("background-color", "white");
     $("#books").css("background-color", "lightgrey");
