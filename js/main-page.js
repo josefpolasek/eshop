@@ -45,6 +45,7 @@ $("#cat5").click(function () {
     $("aside div").css("background-color", "white");
     $("#cat5").css("background-color", "lightgrey");
 });
+<<<<<<< HEAD
 
 $("#cat6").click(function () {
     $("aside div").css("background-color", "white");
@@ -52,3 +53,6 @@ $("#cat6").click(function () {
 }); */
 
 
+=======
+})
+>>>>>>> 7d0bbde0a7024663651f006156653f69df250e0e

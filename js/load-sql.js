@@ -93,48 +93,65 @@ $(document).ready(function () {
   $("#clothes").click(function () {
     $("aside div").css("background-color", "white");
     $("#clothes").css("background-color", "lightgrey");
-    display(categories.clothes);
+    display(categories.clothes, false);
   });
 
   $("#furniture").click(function () {
     $("aside div").css("background-color", "white");
     $("#furniture").css("background-color", "lightgrey");
-    display(categories.furniture);
+    display(categories.furniture, false);
   });
 
   $("#computer").click(function () {
     $("aside div").css("background-color", "white");
     $("#computer").css("background-color", "lightgrey");
-    display(categories.computer);
+    display(categories.computer, false);
   });
 
-  /* //////// SORT BY PRICE //////// */
+  /* //////////// SORT BY PRICE //////////// */
   $("#low").click(function () {
     $(".header button").css("background-color", "white");
     $("#low").css("background-color", "lightgrey");
     
+    $("#high").removeClass("clicked");
+    $("#custom").removeClass("clicked");
+    $("#low").addClass("clicked");
+
+    display(null, true);
   });
 
   $("#high").click(function () {
     $(".header button").css("background-color", "white");
     $("#high").css("background-color", "lightgrey");
-    
+
+    $("#low").removeClass("clicked");
+    $("#custom").removeClass("clicked");
+    $("#high").addClass("clicked");
+
+    display(null, true);
   });
 
   $("#custom").click(function () {
     $(".header button").css("background-color", "white");
     $("#custom").css("background-color", "lightgrey");
     
+    display(null, true);
   });
 
 
   /* //////// _ _ _ //////// */
-  function display(products) {
+  function display(products, sort) {
     $("#productBoard").html("");
 
-    // console.log(products);
+    if (sort) { 
+      products = JSON.parse(localStorage.getItem("products"));
+      // console.log(products);
+    }
     
-    products.slice().reverse().forEach(item => {
+    if($("#low").hasClass("clicked")) products = products.slice().reverse();
+    else if ($("#high").hasClass("clicked")) products = products.slice().reverse();
+    
+    products.forEach(item => {
       // console.log(item);
       // console.log(item[3]);
       // console.log(item[0]);
@@ -149,6 +166,9 @@ $(document).ready(function () {
 
       $("#productBoard").append(c);
       // end 
+
+      window.localStorage.removeItem("products");
+      localStorage.setItem("products", JSON.stringify(products));
     });
   };
 
