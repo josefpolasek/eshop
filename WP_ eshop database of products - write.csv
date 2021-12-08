@@ -1,0 +1,30 @@
+ID,product name,category,amount of products,price for one,photo source
+0,Alice in Wonderland,book,1,5.97,https://m.media-amazon.com/images/I/71O1It5N1VS._AC_UY436_FMwebp_QL65_.jpg
+1,Winnie-the-Pooh,book,2,6.57,https://m.media-amazon.com/images/I/911dHH5CsOL._AC_UY436_FMwebp_QL65_.jpg
+2,Finn Family Moomintroll,book,1,6.79,https://m.media-amazon.com/images/I/71wCMGk7BSL._AC_UY436_FMwebp_QL65_.jpg
+3,Harry Potter (2),book,4,6.98,https://m.media-amazon.com/images/I/91OINeHnJGL._AC_UY436_FMwebp_QL65_.jpg
+4,The Lord of the Rings (1),book,3,7.30,https://m.media-amazon.com/images/I/91jBdaRVqML._AC_UY436_FMwebp_QL65_.jpg
+5,1984,book,2,7.48,https://m.media-amazon.com/images/I/91Q56n9K99L._AC_UY436_FMwebp_QL65_.jpg
+6,The Lord of the Rings (2),book,1,7.99,https://m.media-amazon.com/images/I/71u8+yoKy-L._AC_UY436_FMwebp_QL65_.jpg
+7,Lord of the Flies,book,4,8.26,https://m.media-amazon.com/images/I/81WUAoL-wFL._AC_UY436_FMwebp_QL65_.jpg
+8,Harry Potter (1),book,2,8.36,https://m.media-amazon.com/images/P/059035342X.01._SCLZZZZZZZ_SX500_.jpg
+9,War and Peace,book,3,9.30,https://m.media-amazon.com/images/I/714JIiTM8qL._AC_UL640_FMwebp_QL65_.jpg
+10,The Da Vinci Code,book,3,9.73,https://m.media-amazon.com/images/I/81jtrIKJd2L._AC_UY436_FMwebp_QL65_.jpg
+11,Hamlet,book,3,9.99,https://m.media-amazon.com/images/I/71VieSMr6PL._AC_UY436_FMwebp_QL65_.jpg
+12,Fommy Newborn,clothes,3,9.99,https://m.media-amazon.com/images/I/71+V3NIFpQL._AC_UL640_FMwebp_QL65_.jpg
+13,Batman: Year One,book,1,10.29,https://m.media-amazon.com/images/I/71VieSMr6PL._AC_UY436_FMwebp_QL65_.jpg
+14,The Hobbit,book,2,11.59,https://m.media-amazon.com/images/I/7174s2FosSL._AC_UY436_FMwebp_QL65_.jpg
+15,Adventures of Huckleberry Finn,book,2,11.95,https://m.media-amazon.com/images/I/6189n2G9nWL._AC_UY436_FMwebp_QL65_.jpg
+16,Dune,book,2,12.00,https://m.media-amazon.com/images/I/91JV0+3BRGL._AC_UY436_FMwebp_QL65_.jpg
+17,Brave New World,book,2,12.49,https://m.media-amazon.com/images/I/71aDrgLp9CL._AC_UY436_FMwebp_QL65_.jpg
+18,Simple Joys,clothes,2,13.49,https://m.media-amazon.com/images/I/912wmfqjOwL._AC_UL640_FMwebp_QL65_.jpg
+19,R.U.R.,book,3,14.33,https://m.media-amazon.com/images/I/71i+7uFJWfL._AC_UY436_FMwebp_QL65_.jpg
+20,The Little Prince,book,2,15.99,https://m.media-amazon.com/images/I/714WPVclLcL._AC_UL640_FMwebp_QL65_.jpg
+21,Gerber baby-boys 4 Pack,clothes,4,17.65,https://m.media-amazon.com/images/I/91NqlBcHMbL._AC_UL640_FMwebp_QL65_.jpg
+22,Percy Jackson and the Olympians,book,1,18.80,https://m.media-amazon.com/images/I/81x1ZJ1IkoS._AC_UY436_FMwebp_QL65_.jpg
+23,Champion Men's Everyday,clothes,2,20.13,https://m.media-amazon.com/images/I/71mJ7xJYwzS._AC_UL640_FMwebp_QL65_.jpg
+24,Seagate Portable 2TB,computer,2,59.99,https://m.media-amazon.com/images/I/81tjLksKixL._AC_UL640_FMwebp_QL65_.jpg
+25,TGEEK Stylish PU,computer,4,63.00,https://m.media-amazon.com/images/I/71LcfR3uuDS._AC_UL640_FMwebp_QL65_.jpg
+26,Entry Table,furniture,3,70.65,https://m.media-amazon.com/images/I/81GPbreeHgL._AC_UL640_FMwebp_QL65_.jpg
+27,Orange Club Chair,furniture,1,287.90,https://m.media-amazon.com/images/I/71XBgaKa73L._AC_UL640_FMwebp_QL65_.jpg
+28,ASUS D340MC,computer,1,499.99,https://m.media-amazon.com/images/I/81OcujJNaxL._AC_UY436_FMwebp_QL65_.jpg

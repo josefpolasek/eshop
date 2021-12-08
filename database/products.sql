@@ -2,7 +2,7 @@
 CREATE TABLE table_name(
 	product_name VARCHAR(100),
 	category VARCHAR(100),
-	amount_of_products DOUBLEttryg,
+	amount_of_products DOUBLE,
 	price_for_one DOUBLE,
 	photo_source VARCHAR(100)
 );
@@ -62,4 +62,3 @@ VALUES
 (
 'Finn Family Moomintroll', 'book', 1, 6.79, '"https://images-na.ssl-images-amazon.com/images/I/41JbXQuROJL._SY291_BO1'
 );
-

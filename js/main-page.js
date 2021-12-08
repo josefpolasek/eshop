@@ -8,7 +8,7 @@ const categories = {
 
 let categoriesArray = [];
 
-let cartContent = [];
+let cartContent = /* JSON.parse(localStorage.getItem("cartContent")); */ [];
 
 let displayedProducts = [];
 

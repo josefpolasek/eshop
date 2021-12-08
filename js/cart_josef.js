@@ -1,39 +1,33 @@
 $(document).ready(function () {
 
-  const data = JSON.parse(localStorage.getItem("cartContent"));
-  console.log(data);
+  const cartContent = JSON.parse(localStorage.getItem("cartContent"));
+  // console.log(cartContent);
+  
+  /* var items = [
+    {
+      itemId: 1234,
+      name: "Developer",
+      picture: "../klaus.jpg",
+      amount: 2,
+      price: 12
+    },
+    {
+      itemId: 2345,
+      name: "Developer",
+      picture: "../klaus.jpg",
+      amount: 3,
+      price: 3.5
+    },
+    {
+      itemId: 3456,
+      name: "Covid je levicový.",
+      picture: "../klaus.jpg",
+      amount: 5,
+      price: 2
+    }
+  ]; */
 
-
-  /*   var data = [
-      [
-        1234,
-        "Developer",
-        'computer',
-        2,
-        59.99,
-        "../klaus.jpg"
-      ],
-      [
-        2345,
-        "Ahoj",
-        'computer',
-        2,
-        59.99,
-        "../klaus.jpg"
-      ],
-      [
-        3456,
-        "Developer",
-        'computer',
-        2,
-        59.99,
-        "../klaus.jpg"
-      ]
-    ];
- */
-
-
-  showItems(data)
+  showItems(cartContent);
 
   //render the actual content
   function showItems(items) {
@@ -51,15 +45,21 @@ $(document).ready(function () {
       oneElement.setAttribute('data-key', oneItem[0]);
       oneElement.innerHTML = `
         <button type="button" class="btn btn-trash">
-            <div class="trash-container">
-
-            <div>
+          <div class="trash-container">
+          <div>
         </button>
       `;
+
       //add the coresponding image
       const oneImage = document.createElement('div');
       oneImage.setAttribute('class', 'thumb');
-      oneImage.setAttribute('style', "background-image: url(" + oneItem[5] + ")");
+
+      /* //////////////// CHANGE TOMAS PYCHA //////////////// */
+      oneImage.setAttribute('style', "background-image: url(https://m.media-amazon.com/images/I/71LcfR3uuDS._AC_UL640_FMwebp_QL65_.jpg)");
+      // `${oneItem[5]}`
+      // console.log(`${oneItem[5]}`);
+      /* //////////////// CHANGE TOMAS PYCHA //////////////// */
+
 
       //add the coresponding title
       const oneName = document.createElement("h4");
@@ -112,7 +112,7 @@ $(document).ready(function () {
       onePrice.appendChild(oneUnitPrice);
 
       const symbols = document.createElement('h2');
-      symbols.innerText = '\u00a0USD =\u00a0';
+      symbols.innerText = '\u00a0 $ =\u00a0';
       onePrice.appendChild(symbols);
 
       const finalPrice = document.createElement('h2');
@@ -121,7 +121,7 @@ $(document).ready(function () {
       onePrice.appendChild(finalPrice);
 
       const symbolsTwo = document.createElement('h2');
-      symbolsTwo.innerText = '\u00a0USD';
+      symbolsTwo.innerText = '\u00a0 $';
       onePrice.appendChild(symbolsTwo);
 
 
@@ -138,17 +138,19 @@ $(document).ready(function () {
 
 
   function deleteItem(id) {
-    console.log(data);
+    console.log(id);
+    // console.log(cartContent);
     // filters out the elements based on deleted elements id's
-    data = data.filter(function (item) {
 
-      return item[0] != id;
-    });
+    /* for (let i = 0; i < cartContent.length; i++) {
+      
+    } */
+    cartContent = cartContent.filter( /* item => item[0] != id */ item => console.log(item) );
 
     //show the updated content
-    //saveToStorage(items);
-    console.log(data);
-    showItems(data);
+    //saveToStorage(cartContent);
+    console.log(items);
+    showItems(cartContent);
   }
 
   //add one event listener to the whole grid
@@ -166,7 +168,7 @@ $(document).ready(function () {
     if (item.target.classList.contains("btn-plus")) {
 
       const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
-      data.forEach(function (oneItem) {
+      cartContent.forEach(function (oneItem) {
 
         if (oneItem[0] == idShort) {
           oneItem[3] = oneItem[3] + 1;
@@ -175,7 +177,7 @@ $(document).ready(function () {
     } else if (item.target.classList.contains("btn-minus")) {
 
       const idShort = item.target.parentElement.parentElement.getAttribute("data-key");
-      data.forEach(function (oneItem) {
+      cartContent.forEach(function (oneItem) {
 
         if (oneItem[0] == idShort) {
 
@@ -190,12 +192,7 @@ $(document).ready(function () {
         }
       });
     }
-    showItems(data);
-  });
-
-  $("#go_back").click(function () {
-
-    window.location.assign("../index.html");
+    showItems(cartContent);
   });
 
 
