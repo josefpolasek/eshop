@@ -2,10 +2,6 @@ $(document).ready(function () {
 
   const data = JSON.parse(localStorage.getItem("arrayTMP"));
   console.log(data);
-  return;
-
-  // const data = require ("load-sql.js");
-  // const data = require('./array.js');
 
   var items = [
     {
